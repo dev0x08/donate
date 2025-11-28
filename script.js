@@ -132,6 +132,11 @@ function openDownloadModal(appType) {
                             <li>🔹 Tầm nhìn rộng hơn</li>
                         </ul>
                     </div>
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <p style="color: var(--success); margin: 0;">
+                            <i class="fas fa-check-circle"></i> Đã cập nhật phiên bản mới nhất
+                        </p>
+                    </div>
                 </div>
             `;
             
@@ -144,6 +149,13 @@ function openDownloadModal(appType) {
                     <button class="btn btn-outline" onclick="closeDownloadModal()" style="padding: 12px 24px;">
                         <i class="fas fa-times"></i> Đóng
                     </button>
+                </div>
+                
+                <div style="margin-top: 20px; padding: 15px; background: rgba(59, 130, 246, 0.05); border-radius: 8px;">
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">
+                        <i class="fas fa-info-circle"></i> 
+                        Sau khi tải về, vui lòng làm theo hướng dẫn cài đặt IPA
+                    </p>
                 </div>
             `;
             break;
@@ -166,6 +178,11 @@ function openDownloadModal(appType) {
                             <li>🔹 Mở khóa tất cả khu vực</li>
                         </ul>
                     </div>
+                    <div style="background: rgba(59, 130, 246, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <p style="color: var(--primary); margin: 0;">
+                            <i class="fas fa-star"></i> Phiên bản mới - Cập nhật tính năng
+                        </p>
+                    </div>
                 </div>
             `;
             
@@ -178,6 +195,13 @@ function openDownloadModal(appType) {
                     <button class="btn btn-outline" onclick="closeDownloadModal()" style="padding: 12px 24px;">
                         <i class="fas fa-times"></i> Đóng
                     </button>
+                </div>
+                
+                <div style="margin-top: 20px; padding: 15px; background: rgba(59, 130, 246, 0.05); border-radius: 8px;">
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">
+                        <i class="fas fa-info-circle"></i> 
+                        Sau khi tải về, vui lòng làm theo hướng dẫn cài đặt IPA
+                    </p>
                 </div>
             `;
             break;
@@ -230,19 +254,19 @@ function openDownloadModal(appType) {
             break;
             
         default:
-    // Chỉ hiển thị thông báo lỗi, không có nút tải về
-    content = `
-        <div style="text-align: center; padding: 40px;">
-            <i class="fas fa-exclamation-triangle" style="font-size: 48px; color: #ff4444; margin-bottom: 20px;"></i>
-            <h3 style="color: #ff4444;">Thông tin không khả dụng</h3>
-            <p style="color: var(--text-muted); margin-bottom: 25px;">Không thể tải thông tin chi tiết cho ứng dụng này.</p>
-            <div style="display: flex; justify-content: center;">
-                <button class="btn btn-outline" onclick="closeDownloadModal()" style="padding: 12px 24px;">
-                    <i class="fas fa-times"></i> Đóng
-                </button>
-            </div>
-        </div>
-    `;
+            // Chỉ hiển thị thông báo lỗi, không có nút tải về
+            content = `
+                <div style="text-align: center; padding: 40px;">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 48px; color: #ff4444; margin-bottom: 20px;"></i>
+                    <h3 style="color: #ff4444;">Thông tin không khả dụng</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 25px;">Không thể tải thông tin chi tiết cho ứng dụng này.</p>
+                    <div style="display: flex; justify-content: center;">
+                        <button class="btn btn-outline" onclick="closeDownloadModal()" style="padding: 12px 24px;">
+                            <i class="fas fa-times"></i> Đóng
+                        </button>
+                    </div>
+                </div>
+            `;
     }
     
     contentDiv.innerHTML = content;
@@ -251,11 +275,26 @@ function openDownloadModal(appType) {
 
 // Hàm tải về (giả lập)
 function downloadApp(appType) {
-    showNotification(`Đang bắt đầu tải ${appType}...`, true);
+    let appName = '';
+    switch(appType) {
+        case 'lienquan':
+            appName = 'Liên Quân Mobile';
+            break;
+        case 'petsim':
+            appName = 'Pet Simulator 99';
+            break;
+        case 'kinglegacy':
+            appName = 'King Legacy Hub';
+            break;
+        default:
+            appName = 'Ứng dụng';
+    }
+    
+    showNotification(`Đang bắt đầu tải ${appName}...`, true);
     
     // Giả lập quá trình tải về
     setTimeout(() => {
-        showNotification(`Tải về ${appType} thành công!`, true);
+        showNotification(`Tải về ${appName} thành công!`, true);
         closeDownloadModal();
     }, 2000);
 }
