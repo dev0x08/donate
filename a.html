@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnhLouis | IPA Share</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+    
+    <!-- Thanh điều hướng mới -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">
+                <div class="nav-logo">AL</div>
+                <span class="nav-brand-text">AnhLouis</span>
+            </a>
+            
+            
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="/" class="nav-link active">
+                    <i class="fas fa-home nav-icon"></i>
+                    <span>Trang chủ</span>
+                </a>
+                <a href="#ipa-files-section" class="nav-link">
+                    <i class="fas fa-mobile-alt nav-icon"></i>
+                    <span>IPA Files</span>
+                </a>
+                <a href="#donate-section" class="nav-link">
+                    <i class="fas fa-gem nav-icon"></i>
+                    <span>Donate</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <header>
+        <!-- Phần dịch vụ chuyên nghiệp -->
+        <div class="services-section">
+            <h2 class="font-cyber main-title">
+                <span class="text-white">Dịch vụ</span>
+                <span class="neon-text block">CHUYÊN NGHIỆP</span>
+            </h2>
+            
+            <div class="title-underline"></div>
+            
+            <p class="service-description">
+                Chúng tôi cung cấp các giải pháp công nghệ hiện đại với đội ngũ chuyên gia giàu kinh nghiệm, 
+                cam kết mang lại trải nghiệm tốt nhất cho khách hàng.
+            </p>
+        </div>
+        
+        <div class="social-links">
+            <a href="#" class="social-btn discord" title="Tham gia Discord"><i class="fa-brands fa-discord"></i></a>
+            <a href="#" class="social-btn telegram" title="Tham gia Telegram"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#" class="social-btn facebook" title="Tham gia Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn" title="Tham gia Zalo"><i class="fa-solid fa-z"></i></a>
+        </div>
+    </header>
+    
+
+    <div class="container">
+
+        <div class="payment-container" id="notice-section">
+            <div class="payment-header">
+                <div class="notice-header">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-shield-alt"></i>
+                        Thông Báo
+                    </div>
+                    <button class="close-notice" onclick="closeNotice()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card" style="border: none; margin-top: 0; border-radius: 0 0 15px 15px;">
+                <p>
+                    - Vui lòng tham gia Discord để nhận thông báo cập nhật mới nhất.<br>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="payment-container" id="ipa-files-section">
+            <div class="payment-header">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-terminal"></i>
+                    <span>Anh Louis IPA File</span>
+                </div>
+            </div>
+            
+            <div class="grid" style="padding: 30px;">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-badges">
+                            <span class="badge update">UPDATED</span>
+                        </div>
+                        <i class="fas fa-bolt" style="color: var(--primary);"></i>
+                    </div>
+                    <h3>Liên Quân Mobile x NAPO Team</h3>
+                    <p>Mod menu với nhiều tính năng hấp dẫn cho Liên Quân Mobile.</p>
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-primary" onclick="openDownloadModal('lienquan')">
+                            <i class="fas fa-eye" aria-hidden="true"></i> Xem chi tiết
+                        </button>
+                        <button class="btn btn-outline" onclick="openGuideModal()">
+                            <i class="fas fa-play"></i> Hướng Dẫn
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-badges">
+                            <span class="badge new">NEW</span>
+                        </div>
+                        <i class="fas fa-paw" style="color: var(--primary);"></i>
+                    </div>
+                    <h3>Pet Simulator 99</h3>
+                    <p>Auto farm, auto hatch và nhiều tính năng hỗ trợ cho Pet Simulator 99.</p>
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-primary" onclick="openDownloadModal('petsim')">
+                            <i class="fas fa-eye" aria-hidden="true"></i> Xem chi tiết
+                        </button>
+                        <button class="btn btn-outline" onclick="openGuideModal()">
+                            <i class="fas fa-play"></i> Hướng Dẫn
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-badges">
+                            <span class="badge vip">VIP</span>
+                        </div>
+                        <i class="fas fa-crown" style="color: var(--primary);"></i>
+                    </div>
+                    <h3>King Legacy Hub</h3>
+                    <p>Bộ công cụ đầy đủ cho King Legacy: auto farm, teleport, và nhiều tính năng độc quyền.</p>
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-primary" onclick="openDownloadModal('kinglegacy.html')">
+                            <i class="fas fa-eye" aria-hidden="true"></i> Xem chi tiết
+                        </button>
+                        <button class="btn btn-outline" onclick="openGuideModal()">
+                            <i class="fas fa-play"></i> Hướng Dẫn
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-container" id="donate-section">
+            <div class="payment-header" onclick="toggleCollapse('donate-section')">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-gem"></i>
+                    <span>Donate</span>
+                </div>
+                <i class="fas fa-chevron-up collapse-icon"></i>
+            </div>
+            
+            <div class="payment-body">
+                <div class="bank-info">
+                    <div 
+                        class="bank-card"
+                        onclick="showQrCode(
+                            'SACOMBANK (STB)', 
+                            '050122343992',
+                            'NGUYEN THE ANH'
+                        )"
+                    >
+                        <div class="bank-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="bank-details">
+                            <div class="bank-name">SACOMBANK BANK (STB)</div>
+                            <div class="bank-number" data-value="050122343992">0501 2234 3992</div>
+                            <div class="bank-owner">NGUYEN THE ANH</div>
+                        </div>
+                        <button class="copy-btn-small" onclick="event.stopPropagation(); copyScript(this.closest('.bank-card').querySelector('.bank-number').getAttribute('data-value'))" title="Copy STK">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <i class="fas fa-qrcode qr-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 AnhLouis. All rights reserved.</p>
+    </footer>
+
+    <!-- QR Code Modal -->
+    <div id="qr-modal" class="modal-overlay" onclick="closeQrCode()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeQrCode()"><i class="fas fa-times"></i></button>
+            <h3 id="qr-title">Mã QR Code</h3>
+            
+            <div class="qr-code-box">
+                <img id="qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=050122343992" alt="Mã QR Thanh Toán">
+            </div>
+
+            <div class="qr-details">
+                <p>Số tài khoản: <span id="qr-number"></span></p>
+                <p>Chủ tài khoản: <span id="qr-owner"></span></p>
+               </div>
+        </div>
+    </div>
+
+    <!-- Download Modal - Đã được tối ưu hóa -->
+    <div id="download-modal" class="download-modal" onclick="closeDownloadModal()">
+        <div class="download-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeDownloadModal()"><i class="fas fa-times"></i></button>
+            
+            <!-- Nội dung sẽ được tải từ file HTML khác -->
+            <div id="ipa-details-content">
+                <!-- Nội dung từ lienquan.html, petsim.html, kinglegacy.html sẽ được tải ở đây -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Guide Modal -->
+    <div id="guide-modal" class="guide-modal" onclick="closeGuideModal()">
+        <div class="guide-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeGuideModal()"><i class="fas fa-times"></i></button>
+            
+            <div class="guide-header">
+                <div class="guide-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="guide-title">
+                    <h3>Hướng Dẫn Cài Đặt IPA</h3>
+                    <p>Cài đặt ứng dụng đã mod trên iOS không cần Jailbreak</p>
+                </div>
+            </div>
+
+            <div class="guide-accordion">
+                <div class="guide-accordion-item">
+                    <div class="guide-accordion-header" onclick="toggleGuideAccordion(this)">
+                        <h4 class="guide-accordion-title">
+                            <i class="fas fa-certificate"></i>
+                            Cách cài bằng chứng chỉ
+                        </h4>
+                        <i class="fas fa-chevron-down guide-accordion-icon"></i>
+                    </div>
+                    <div class="guide-accordion-content">
+                        <div class="guide-step">
+                            <div class="guide-step-number">1</div>
+                            <div class="guide-step-content">
+                                <h4 class="guide-step-title">
+                                    <i class="fas fa-download"></i>
+                                    Tải file IPA và chứng chỉ
+                                </h4>
+                                <p class="guide-step-description">
+                                    Tải file .IPA đã được mod và file chứng chỉ (.p12 hoặc .mobileprovision) từ liên kết được cung cấp.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <div class="guide-step-number">2</div>
+                            <div class="guide-step-content">
+                                <h4 class="guide-step-title">
+                                    <i class="fas fa-key"></i>
+                                    Cài đặt chứng chỉ
+                                </h4>
+                                <p class="guide-step-description">
+                                    Mở file chứng chỉ trên thiết bị iOS của bạn và làm theo hướng dẫn để cài đặt. 
+                                    Bạn cần vào <strong>Cài đặt → Cài đặt chung → Quản lý Thiết bị & VPN</strong> để tin cậy chứng chỉ.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <div class="guide-step-number">3</div>
+                            <div class="guide-step-content">
+                                <h4 class="guide-step-title">
+                                    <i class="fas fa-file-import"></i>
+                                    Cài đặt ứng dụng
+                                </h4>
+                                <p class="guide-step-description">
+                                    Sử dụng các công cụ như AltStore, Cydia Impactor hoặc các ứng dụng quản lý file để cài đặt file IPA đã tải về.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <div class="guide-step-number">4</div>
+                            <div class="guide-step-content">
+                                <h4 class="guide-step-title">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Tin cậy nhà phát triển
+                                </h4>
+                                <p class="guide-step-description">
+                                    Sau khi cài đặt, vào <strong>Cài đặt → Cài đặt chung → Quản lý Thiết bị & VPN</strong>, 
+                                    tìm chứng chỉ bạn đã cài đặt và nhấn "Tin cậy".
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-accordion-item">
+                    <div class="guide-accordion-header" onclick="toggleGuideAccordion(this)">
+                        <h4 class="guide-accordion-title">
+                            <i class="fas fa-download"></i>
+                            Cách cài bằng Sideloadly/AltStore
+                        </h4>
+                        <i class="fas fa-chevron-down guide-accordion-icon"></i>
+                    </div>
+                    <div class="guide-accordion-content">
+                        <div class="guide-step">
+                            <div class="guide-step-number">1</div>
+                            <div class="guide-step-content">
+                                <h4 class="guide-step-title">
+                                    <i class="fas fa-download"></i>
+                                    Tải file IPA
+                                </h4>
+                                <p class="guide-step-description">
+                                    Tải file .IPA đã được mod từ liên kết trên về máy tính của bạn.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <div class="guide-step-number">2</div>
+                            <div class="guide-step-content">
+                                <h4 class="guide-step-title">
+                                    <i class="fas fa-download"></i>
+                                    Tải và cài đặt Sideloadly
+                                </h4>
+                                <p class="guide-step-description">
+                                    Tải Sideloadly và cài đặt nó trên Windows hoặc Mac của bạn. 
+                                    Sideloadly là công cụ miễn phí giúp cài đặt ứng dụng IPA trên iOS không cần Jailbreak.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <div class="guide-step-number">3</div>
+                            <div class="guide-step-content">
+                                <h4 class="guide-step-title">
+                                    <i class="fas fa-plug"></i>
+                                    Kết nối thiết bị iOS
+                                </h4>
+                                <p class="guide-step-description">
+                                    Mở Sideloadly trên máy tính, kết nối thiết bị iOS của bạn qua cáp USB, 
+                                    và đợi cho đến khi tên thiết bị của bạn xuất hiện trong Sideloadly.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <div class="guide-step-number">4</div>
+                            <div class="guide-step-content">
+                                <h4 class="guide-step-title">
+                                    <i class="fas fa-file-import"></i>
+                                    Kéo file IPA vào Sideloadly
+                                </h4>
+                                <p class="guide-step-description">
+                                    Khi thiết bị của bạn đã được nhận diện, kéo file .IPA đã mod mà bạn đã tải về 
+                                    và thả nó vào ứng dụng Sideloadly.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <div class="guide-step-number">5</div>
+                            <div class="guide-step-content">
+                                <h4 class="guide-step-title">
+                                    <i class="fas fa-user"></i>
+                                    Nhập thông tin Apple ID
+                                </h4>
+                                <p class="guide-step-description">
+                                    Nhập email tài khoản Apple của bạn, sau đó nhấn "Start". 
+                                    Sau đó bạn sẽ được yêu cầu nhập mật khẩu. Hãy cung cấp thông tin cần thiết.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <div class="guide-step-number">6</div>
+                            <div class="guide-step-content">
+                                <h4 class="guide-step-title">
+                                    <i class="fas fa-sync-alt"></i>
+                                    Chờ quá trình cài đặt
+                                </h4>
+                                <p class="guide-step-description">
+                                    Chờ Sideloadly hoàn tất việc sideloading/cài đặt IPA đã mod. 
+                                    Nếu có vấn đề trong quá trình cài đặt, vui lòng đọc ghi chú bên dưới.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <div class="guide-step-number">7</div>
+                            <div class="guide-step-content">
+                                <h4 class="guide-step-title">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Tin cậy nhà phát triển
+                                </h4>
+                                <p class="guide-step-description">
+                                    Sau khi cài đặt hoàn tất và bạn thấy ứng dụng trên Màn hình chính, 
+                                    bạn cần vào <strong>Cài đặt → Cài đặt chung → Quản lý Thiết bị & VPN</strong>. 
+                                    Tại đó, nhấn vào email bạn đã nhập từ bước 6, và sau đó nhấn vào 'Tin cậy email@iosgods.com'.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <div class="guide-step-number">8</div>
+                            <div class="guide-step-content">
+                                <h4 class="guide-step-title">
+                                    <i class="fas fa-check-circle"></i>
+                                    Hoàn tất và sử dụng
+                                </h4>
+                                <p class="guide-step-description">
+                                    Bây giờ hãy vào Màn hình chính và mở ứng dụng mới cài đặt và mọi thứ sẽ hoạt động tốt. 
+                                    Bạn có thể cần làm theo hướng dẫn bổ sung trong popup của hack trong trò chơi.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-note-box">
+                <h4><i class="fas fa-exclamation-triangle"></i> Lưu ý quan trọng</h4>
+                <ul>
+                    <li>Với iOS/iPadOS 16 trở lên, bạn phải bật <strong>Chế độ Nhà phát triển (Developer Mode)</strong>.</li>
+                    <li>Đối với tài khoản Apple Developer miễn phí, bạn sẽ cần lặp lại quá trình này mỗi 7 ngày.</li>
+                    <li>Nếu bạn có bất kỳ câu hỏi hoặc vấn đề nào, hãy đọc mục Câu hỏi thường gặp về Sideloadly trong chủ đề này.</li>
+                    <li>Luôn đảm bảo bạn đang sử dụng phiên bản mới nhất của Sideloadly để tránh các lỗi không mong muốn.</li>
+                </ul>
+            </div>
+
+            <div class="guide-close-section">
+                <button class="btn btn-outline" onclick="closeGuideModal()" style="width: 100%;">
+                    <i class="fas fa-times"></i> Đóng hướng dẫn
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span>Đã copy vào bộ nhớ tạm!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

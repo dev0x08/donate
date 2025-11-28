@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Cài Đặt IPA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6780FE;
+            --secondary: #4a5bd6;
+            --bg-color: #050505;
+            --card-bg: #111111;
+            --text-color: #e0e0e0;
+            --gray: #666666;
+            --border-color: rgba(255,255,255,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .guide-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid var(--primary);
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(103, 128, 254, 0.2);
+        }
+
+        .guide-header {
+            background: linear-gradient(90deg, rgba(103, 128, 254, 0.1), transparent);
+            padding: 20px;
+            border-bottom: 1px solid rgba(103, 128, 254, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .guide-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            background: rgba(103, 128, 254, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .guide-title {
+            flex: 1;
+        }
+
+        .guide-title h1 {
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 1.8rem;
+        }
+
+        .guide-title p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        .guide-content {
+            padding: 30px;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-description {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .step-image {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            margin-top: 10px;
+        }
+
+        .note-box {
+            background: rgba(255, 0, 0, 0.05);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .note-box h3 {
+            color: #ff4444;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .note-box ul {
+            padding-left: 20px;
+            color: var(--text-color);
+        }
+
+        .note-box li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .download-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+            box-shadow: 0 0 15px rgba(103, 128, 254, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: var(--primary);
+        }
+
+        @media (max-width: 600px) {
+            .guide-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .step {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .step-number {
+                align-self: center;
+            }
+            .download-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-container">
+        <div class="guide-header">
+            <div class="guide-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="guide-title">
+                <h1>Hướng Dẫn Cài Đặt IPA</h1>
+                <p>Cài đặt ứng dụng đã mod trên iOS không cần Jailbreak</p>
+            </div>
+        </div>
+
+        <div class="guide-content">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3 class="step-title">
+                        <i class="fas fa-download"></i>
+                        Tải file IPA
+                    </h3>
+                    <p class="step-description">
+                        Tải file .IPA đã được mod từ liên kết trên về máy tính của bạn. 
+                        Để tải từ iOSGods App, hãy xem Hướng dẫn tải IPA từ iOSGods App của chúng tôi, 
+                        bao gồm cả video minh họa.
+                    </p>
+                    <img src="https://via.placeholder.com/700x300/6780FE/000000?text=Download+IPA+File" alt="Tải file IPA" class="step-image">
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3 class="step-title">
+                        <i class="fas fa-download"></i>
+                        Tải và cài đặt Sideloadly
+                    </h3>
+                    <p class="step-description">
+                        Tải Sideloadly và cài đặt nó trên Windows hoặc Mac của bạn. 
+                        Sideloadly là công cụ miễn phí giúp cài đặt ứng dụng IPA trên iOS không cần Jailbreak.
+                    </p>
+                    <img src="https://via.placeholder.com/700x300/4a5bd6/000000?text=Install+Sideloadly" alt="Cài đặt Sideloadly" class="step-image">
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3 class="step-title">
+                        <i class="fas fa-plug"></i>
+                        Kết nối thiết bị iOS
+                    </h3>
+                    <p class="step-description">
+                        Mở Sideloadly trên máy tính, kết nối thiết bị iOS của bạn qua cáp USB, 
+                        và đợi cho đến khi tên thiết bị của bạn xuất hiện trong Sideloadly.
+                    </p>
+                    <img src="https://via.placeholder.com/700x300/6780FE/000000?text=Connect+iOS+Device" alt="Kết nối thiết bị iOS" class="step-image">
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3 class="step-title">
+                        <i class="fas fa-file-import"></i>
+                        Kéo file IPA vào Sideloadly
+                    </h3>
+                    <p class="step-description">
+                        Khi thiết bị của bạn đã được nhận diện, kéo file .IPA đã mod mà bạn đã tải về 
+                        và thả nó vào ứng dụng Sideloadly.
+                    </p>
+                    <img src="https://via.placeholder.com/700x300/4a5bd6/000000?text=Drag+and+Drop+IPA" alt="Kéo file IPA vào Sideloadly" class="step-image">
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3 class="step-title">
+                        <i class="fas fa-user"></i>
+                        Nhập thông tin Apple ID
+                    </h3>
+                    <p class="step-description">
+                        Nhập email tài khoản Apple của bạn, sau đó nhấn "Start". 
+                        Sau đó bạn sẽ được yêu cầu nhập mật khẩu. Hãy cung cấp thông tin cần thiết.
+                    </p>
+                    <img src="https://via.placeholder.com/700x300/6780FE/000000?text=Enter+Apple+ID" alt="Nhập thông tin Apple ID" class="step-image">
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h3 class="step-title">
+                        <i class="fas fa-sync-alt"></i>
+                        Chờ quá trình cài đặt
+                    </h3>
+                    <p class="step-description">
+                        Chờ Sideloadly hoàn tất việc sideloading/cài đặt IPA đã mod. 
+                        Nếu có vấn đề trong quá trình cài đặt, vui lòng đọc ghi chú bên dưới.
+                    </p>
+                    <img src="https://via.placeholder.com/700x300/4a5bd6/000000?text=Wait+for+Installation" alt="Chờ quá trình cài đặt" class="step-image">
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">7</div>
+                <div class="step-content">
+                    <h3 class="step-title">
+                        <i class="fas fa-shield-alt"></i>
+                        Tin cậy nhà phát triển
+                    </h3>
+                    <p class="step-description">
+                        Sau khi cài đặt hoàn tất và bạn thấy ứng dụng trên Màn hình chính, 
+                        bạn cần vào <strong>Cài đặt → Cài đặt chung → Quản lý Thiết bị & VPN</strong>. 
+                        Tại đó, nhấn vào email bạn đã nhập từ bước 6, và sau đó nhấn vào 'Tin cậy email@iosgods.com'.
+                    </p>
+                    <img src="https://via.placeholder.com/700x300/6780FE/000000?text=Trust+Developer" alt="Tin cậy nhà phát triển" class="step-image">
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">8</div>
+                <div class="step-content">
+                    <h3 class="step-title">
+                        <i class="fas fa-check-circle"></i>
+                        Hoàn tất và sử dụng
+                    </h3>
+                    <p class="step-description">
+                        Bây giờ hãy vào Màn hình chính và mở ứng dụng mới cài đặt và mọi thứ sẽ hoạt động tốt. 
+                        Bạn có thể cần làm theo hướng dẫn bổ sung trong popup của hack trong trò chơi.
+                    </p>
+                    <img src="https://via.placeholder.com/700x300/4a5bd6/000000?text=Complete+and+Enjoy" alt="Hoàn tất và sử dụng" class="step-image">
+                </div>
+            </div>
+
+            <div class="note-box">
+                <h3><i class="fas fa-exclamation-triangle"></i> Lưu ý quan trọng</h3>
+                <ul>
+                    <li>Với iOS/iPadOS 16 trở lên, bạn phải bật <strong>Chế độ Nhà phát triển (Developer Mode)</strong>.</li>
+                    <li>Đối với tài khoản Apple Developer miễn phí, bạn sẽ cần lặp lại quá trình này mỗi 7 ngày.</li>
+                    <li>Nếu bạn có bất kỳ câu hỏi hoặc vấn đề nào, hãy đọc mục Câu hỏi thường gặp về Sideloadly trong chủ đề này.</li>
+                    <li>Luôn đảm bảo bạn đang sử dụng phiên bản mới nhất của Sideloadly để tránh các lỗi không mong muốn.</li>
+                </ul>
+            </div>
+
+            <div class="download-links">
+                <a href="https://sideloadly.io/" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-download"></i> Tải Sideloadly
+                </a>
+                <a href="https://iosgods.com/" class="btn btn-outline" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Truy cập iOSGods
+                </a>
+                <a href="#" class="btn btn-outline" onclick="window.print()">
+                    <i class="fas fa-print"></i> In hướng dẫn
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Thêm hiệu ứng cho hình ảnh khi click
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.step-image');
+            
+            images.forEach(image => {
+                image.addEventListener('click', function() {
+                    // Tạo modal xem ảnh lớn
+                    const modal = document.createElement('div');
+                    modal.style.position = 'fixed';
+                    modal.style.top = '0';
+                    modal.style.left = '0';
+                    modal.style.width = '100%';
+                    modal.style.height = '100%';
+                    modal.style.backgroundColor = 'rgba(0,0,0,0.9)';
+                    modal.style.display = 'flex';
+                    modal.style.justifyContent = 'center';
+                    modal.style.alignItems = 'center';
+                    modal.style.zIndex = '10000';
+                    
+                    const img = document.createElement('img');
+                    img.src = this.src;
+                    img.style.maxWidth = '90%';
+                    img.style.maxHeight = '90%';
+                    img.style.borderRadius = '10px';
+                    
+                    modal.appendChild(img);
+                    document.body.appendChild(modal);
+                    
+                    modal.addEventListener('click', function() {
+                        document.body.removeChild(modal);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
