@@ -1,28 +1,36 @@
-// Xử lý menu điều hướng trên mobile
+// Xử lý menu điều hướng trên mobile - FIXED
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 
-navToggle.addEventListener('click', () => {
+navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
     navMenu.classList.toggle('active');
 });
 
-// Đóng menu khi click vào link (trên mobile)
+// Đóng menu khi click vào link (trên mobile) - FIXED
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+        // Cho phép điều hướng bình thường
         if (window.innerWidth <= 768) {
             navMenu.classList.remove('active');
         }
     });
 });
 
-// Đóng menu khi click ra ngoài (trên mobile)
+// Đóng menu khi click ra ngoài (trên mobile) - FIXED
 document.addEventListener('click', (e) => {
     if (window.innerWidth <= 768 && 
+        navMenu.classList.contains('active') &&
         !navToggle.contains(e.target) && 
         !navMenu.contains(e.target)) {
         navMenu.classList.remove('active');
     }
+});
+
+// Ngăn sự kiện click trên menu lan ra ngoài - FIXED
+navMenu.addEventListener('click', (e) => {
+    e.stopPropagation();
 });
 
 // Các hàm JavaScript từ file gốc
@@ -343,10 +351,44 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Xử lý smooth scroll cho anchor links - FIXED
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            // Đóng menu mobile nếu đang mở
+            if (window.innerWidth <= 768) {
+                navMenu.classList.remove('active');
+            }
+            
+            // Smooth scroll đến phần tử
+            const headerHeight = 70;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
 // Khởi tạo khi trang load
 document.addEventListener('DOMContentLoaded', () => {
     const donateSection = document.getElementById('donate-section');
     const paymentBody = donateSection.querySelector('.payment-body');
     
     paymentBody.style.maxHeight = '2000px';
+    
+    // Thêm sự kiện resize để đảm bảo menu đóng khi chuyển từ mobile sang desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            navMenu.classList.remove('active');
+        }
+    });
 });
